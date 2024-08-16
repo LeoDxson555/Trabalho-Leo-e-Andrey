@@ -1,34 +1,44 @@
+//Léo Dxson Amorim Sales
+//Andrey Felipe Grether
+//1 ano 3
+
 import java.util.Scanner;
 public class Main {
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Escolha uma operação:");
-    System.out.println("1. Adição");
-    System.out.println("2. Subtração");
-    System.out.println("3. Multiplicação");
-    System.out.println("4. Divisão");
-    System.out.println("5. Saida");
-    int escolha = scanner.nextInt();
-    if (escolha == 5) {
-      System.out.println("Saindo do programa.");
-      break;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("1. Adição");
+            System.out.println("2. Subtração");
+            System.out.println("3. Multiplicação");
+            System.out.println("4. Divisão");
+            System.out.println("5. Saída");
+            System.out.println("Escolha uma operação:");
+            int escolha = scanner.nextInt();
+            if (escolha == 5) {
+                System.out.println("Saindo do programa.");
+                break;
+            } if (escolha > 5) {
+                System.out.println("Opção inválida. Tente novamente.");
+                continue; // Go back to the beginning of the loop
+            }
+
+            
+            System.out.println("Digite o primeiro número:");
+            int num1 = scanner.nextInt();
+            System.out.println("Digite o segundo número:");
+            int num2 = scanner.nextInt();
+            int resultado = 0;
+            if (escolha == 1) {
+                resultado = num1 + num2;
+            } if (escolha == 2) {
+                resultado = num1 - num2;
+            } if (escolha == 3) {
+                resultado = num1 * num2;
+            } if (escolha == 4) {
+                resultado = num1 / num2;
+            }
+            System.out.println("Resultado: " + resultado);
+            System.out.println(); 
+        }
     }
-    System.out.println("Digite o primeiro número:");
-    double num1 = scanner.nextDouble();
-    System.out.println("Digite o segundo número:");
-    double num2 = scanner.nextDouble();
-    double resultado = 0;
-    switch (escolha) {
-      case 1:
-        resultado = num1 + num2;
-        break;
-      case 2:
-        resultado = num1 - num2;
-        break;
-      case 3:
-        resultado = num1 * num2;
-        break;
-    }
-    System.out.println("Resultado: " + resultado);
-  }
 }
